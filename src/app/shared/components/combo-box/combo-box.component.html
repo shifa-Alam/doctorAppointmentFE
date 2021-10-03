@@ -1,0 +1,24 @@
+<!-- <mat-form-field [formGroup]="sharedForm" style="width:100%">
+    <mat-select matNativeControl placeholder="{{ placeHolder | translate  }}" (selectionChange)="onChange()"
+        formControlName="sharedFormControl" [required]="required">
+        <mat-option value="" [disabled]="noneOptionDisabled">{{'global.none' | translate}}</mat-option>
+        <mat-option *ngFor="let entity of list" [value]="entity.id">{{ entity.name | translate }}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="sharedForm.get('sharedFormControl').hasError('required')">
+        {{errorMessage | translate }}
+    </mat-error>
+</mat-form-field> -->
+
+<form [formGroup]="sharedForm" style="width:100%">
+    <select class="form-select" aria-label="Default select example" placeholder="placeHolder"
+        (selectionChange)="onChange()" formControlName="sharedFormControl" [required]="required">
+        <option class="dropdown-item" value="" [disabled]="noneOptionDisabled"> Select One</option>
+        <option class="dropdown-item" *ngFor="let entity of list" [value]="entity.id">
+            {{ entity.countryName }}</option>
+    </select>
+    <span *ngIf="sharedForm.get('sharedFormControl')?.hasError('required') && sharedForm.get('sharedFormControl')?.touched && sharedForm.get('sharedFormControl')?.dirty ">
+        <p *ngIf="sharedForm.get('sharedFormControl')?.hasError('required')" style="color:red;">
+            {{errorMessage }}
+        </p>
+    </span>
+</form>

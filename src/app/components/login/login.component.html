@@ -1,0 +1,27 @@
+ <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <mat-card class="login-center">
+               
+                <mat-card-content>
+                    <div>
+                        <app-input type="text" label="username" [required]="true"></app-input>
+                    </div>
+                    <div>
+                        <app-input type="password" [required]="true"></app-input>
+                    </div>
+                    <div>
+                        <button (click)="onLogin()">Login</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col" class="sign-up-center">
+            <button (click)="onSignUp()"></button>
+        </div>
+        <div class="col"> </div>
+        <div class="col"></div>
+    </div>

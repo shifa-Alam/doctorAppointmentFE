@@ -1,0 +1,11 @@
+
+<form [formGroup]="sharedForm" style="width:100%" >
+    <input placeholder="{{label }}" type="text" class="form-control" id="customerName"
+        formControlName="sharedFormControl" [required]="required">
+    <span *ngIf="sharedForm.get('sharedFormControl')?.errors && sharedForm.get('sharedFormControl')?.touched && sharedForm.get('sharedFormControl')?.dirty ">
+        <p *ngIf="sharedForm.get('sharedFormControl')?.hasError('required')" style="color:red;">
+            {{errorMessage }}
+        </p>
+    </span>
+
+</form>
